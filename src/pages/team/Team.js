@@ -92,7 +92,7 @@ const Team = () => {
   };
 
   const handleDeleteAgree = ()=>{
-    fetch(`http://localhost:3030/team/${targetDelete}`,{
+    fetch(`https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team/${targetDelete}`,{
       method: "DELETE",
       headers: {
         "Content-Type" : "Application/Json"
@@ -127,7 +127,7 @@ const Team = () => {
     setOpenForm(false);
   }
   const formDialogFun = (member)=>{
-    fetch(`http://localhost:3030/team${method=="update"?'/'+targetEdit.id:""}`,{
+    fetch(`https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team${method=="update"?'/'+targetEdit.id:""}`,{
       method: method=="update"?"PATCH":"POST",
       headers: {
         "Content-Type" : "Application/Json"
