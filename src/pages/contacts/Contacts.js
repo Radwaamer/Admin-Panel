@@ -17,7 +17,7 @@ const Contacts = () => {
         // const data= await res.json();
         // setTable(data);
         // }
-        fetch("http://localhost:3030/contacts")
+        fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/contacts")
         .then(res=>res.json())
         .then(data=>setTable(data))
     },[table]);

@@ -18,7 +18,7 @@ const Transactions = () => {
     };
 
     useEffect(()=>{
-        fetch("./db/transaction-data.json")
+        fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/transactions")
         .then(res=>res.json())
         .then(data=>setTrans(data));
     },[trans]);

@@ -17,7 +17,7 @@ const Invoices = () => {
         // const data= await res.json();
         // setTable(data);
         // }
-        fetch("http://localhost:3030/invoices")
+        fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/invoices")
         .then(res=>res.json())
         .then(data=>setTable(data))
     },[table]);

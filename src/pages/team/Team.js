@@ -18,7 +18,7 @@ const Team = () => {
   const [table, setTable]=useState([]);
 
   const getTable=()=>{
-    fetch("http://localhost:3030/team")
+    fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team")
         .then(res=>res.json())
         .then(data=>setTable(data))
   }
