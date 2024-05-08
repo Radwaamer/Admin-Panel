@@ -17,7 +17,7 @@ const Invoices = () => {
         // const data= await res.json();
         // setTable(data);
         // }
-        fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/invoices")
+        fetch("https://admin-api-hiw8.onrender.com/invoices")
         .then(res=>res.json())
         .then(data=>setTable(data))
     },[table]);

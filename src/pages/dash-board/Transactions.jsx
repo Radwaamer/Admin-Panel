@@ -18,7 +18,7 @@ const Transactions = () => {
     };
 
     useEffect(()=>{
-        fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/transactions")
+        fetch("https://admin-api-hiw8.onrender.com/transactions")
         .then(res=>res.json())
         .then(data=>setTrans(data));
     },[trans]);

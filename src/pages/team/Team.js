@@ -18,7 +18,7 @@ const Team = () => {
   const [table, setTable]=useState([]);
 
   const getTable=()=>{
-    fetch("https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team")
+    fetch("https://admin-api-hiw8.onrender.com/team")
         .then(res=>res.json())
         .then(data=>setTable(data))
   }
@@ -92,7 +92,7 @@ const Team = () => {
   };
 
   const handleDeleteAgree = ()=>{
-    fetch(`https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team/${targetDelete}`,{
+    fetch(`https://admin-api-hiw8.onrender.com/team/${targetDelete}`,{
       method: "DELETE",
       headers: {
         "Content-Type" : "Application/Json"
@@ -127,7 +127,7 @@ const Team = () => {
     setOpenForm(false);
   }
   const formDialogFun = (member)=>{
-    fetch(`https://my-json-server.typicode.com/Radwaamer/Admin-Panel/team${method=="update"?'/'+targetEdit.id:""}`,{
+    fetch(`https://admin-api-hiw8.onrender.com/team/${method=="update"?'/'+targetEdit.id:""}`,{
       method: method=="update"?"PATCH":"POST",
       headers: {
         "Content-Type" : "Application/Json"
