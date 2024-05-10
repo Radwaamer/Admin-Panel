@@ -25,7 +25,7 @@ export default function FormDialog(props) {
                 event.preventDefault();
                 const formData = new FormData(event.currentTarget);
                 const formJson = Object.fromEntries(formData.entries());
-                props.handleAgree({
+                const formValue = {
                     "name":formJson["team-name"],
                     "email":formJson["team-email"],
                     "age":formJson["team-age"],
@@ -34,7 +34,9 @@ export default function FormDialog(props) {
                     "city":formJson["team-city"],
                     "zipCode":formJson["team-zip"],
                     "access":formJson["team-access"],
-                })
+                }
+                props.handleFront(formValue);
+                props.handleAgree(formValue);
             },
             }}
         >

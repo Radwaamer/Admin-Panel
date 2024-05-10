@@ -21,7 +21,7 @@ const Transactions = () => {
         fetch("https://admin-api-hiw8.onrender.com/transactions")
         .then(res=>res.json())
         .then(data=>setTrans(data));
-    },[trans]);
+    },[]);
 
     let transComp=()=>{
             if(trans.length==0){

@@ -20,7 +20,7 @@ const Invoices = () => {
         fetch("https://admin-api-hiw8.onrender.com/invoices")
         .then(res=>res.json())
         .then(data=>setTable(data))
-    },[table]);
+    },[]);
 
         const columns = [
             { field: 'id', headerName: 'ID', flex:3 },

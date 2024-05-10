@@ -102,7 +102,11 @@ const Team = () => {
     .then(res=>res.json())
     .then(handleDeleteClose())
     .then(handleopenSnack())
-    .then(getTable());
+    .then(setTable(()=>{
+      return table.filter(dt=>{
+        return dt.id!==targetDelete
+      })
+    }))
   };
 
 
@@ -138,14 +142,29 @@ const Team = () => {
     .then(res=>res.json())
     .then(formDialogClose())
     .then(handleopenSnack())
-    .then(getTable())
   };
 
+
+  const handleUpdate=(member)=>{
+    const newData=table.map(dt=>{
+      if(targetEdit.id==dt.id){
+        return({...dt,...member})
+      }
+      return dt;
+    })
+    return newData;
+  }
+
+  const handleMember=(member)=>{
+    setTable(method=="update"?
+      handleUpdate(member) : [...table, {"id":String(Date.now()),...member,"registrarId": 123512}]
+    );
+  }
 
   const handleCreate = ()=>{
     setOpenForm(true);
     setMethod("create");
-    setTargetEdit(0)
+    setTargetEdit(0);
   }
 
 
@@ -177,7 +196,8 @@ const Team = () => {
         </Box> : null}
 
         <DialogPobUp handleClose={handleDeleteClose} fullScreen={fullScreen} open={openDelete} handleAgree={handleDeleteAgree} />
-        <FormDialog handleClose={formDialogClose} method={method} open={openForm} handleAgree={formDialogFun} member={targetEdit} />
+        <FormDialog handleClose={formDialogClose} method={method} open={openForm}
+        handleAgree={formDialogFun} member={targetEdit}  handleFront={handleMember}/>
         <SnackBar handleClose={closeSnack} open={openSnack} method={method}/>
 
     </Box>
